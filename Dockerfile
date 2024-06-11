@@ -7,7 +7,7 @@ RUN apt-get update && \
   webp && \
   apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
-RUN git clone https://github.com/LuciZR/Suhail-Md /root/smdd
+RUN git clone https://github.com/LuciZR/ZR-Md /root/smdd
 RUN rm -rf /root/smdd/.git
 WORKDIR /root/smdd
 RUN npm install
