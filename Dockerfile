@@ -15,8 +15,15 @@
 
  
 
-FROM quay.io/suhailtechinfo/suhail-v2
-RUN git clone https://github.com/SuhailTechInfo/Suhail-Md-V1 /root/smdd
+FROM node:lts-buster
+RUN apt-get update && \
+  apt-get install -y \
+  ffmpeg \
+  imagemagick \
+  webp && \
+  apt-get upgrade -y && \
+  rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/LuciZR/Suhail-Md /root/smdd
 RUN rm -rf /root/smdd/.git
 WORKDIR /root/smdd
 RUN npm install
